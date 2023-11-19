@@ -5,6 +5,11 @@ $(function () {
   // To display the current date at the top of the page
   $('#currentDay').text(dayjs().format('dddd, MMMM D'));
 
+  // To update time block colors based on current time
+  function updateTimeBlocks() {
+    var currentHour = dayjs().hour();
+
+
 
 });
 
