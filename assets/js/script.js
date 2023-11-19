@@ -2,9 +2,14 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
+
+// To display the current date at the top of the page
 $(function () {
-  // To display the current date at the top of the page
   $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+
+  function displayCurrentDate() {
+    $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+  }
 
   // To display the current date & generate time blocks
   displayCurrentDate();
