@@ -26,18 +26,18 @@ $(function () {
     });
   }
 
-// Function to generate time blocks from 9am-5pm
-function generateTimeBlocks() {
-  var container = $('.container-lg');
-  var businessHours = 9;
+  // Function to generate time blocks from 9am-5pm
+  function generateTimeBlocks() {
+    var container = $('.container-lg');
+    var businessHours = 9;
 
-  for (var i = 0; i < 9; i++) {
-    var hourId = 'hour-' + businessHours;
+    for (var i = 0; i < 9; i++) {
+      var hourId = 'hour-' + businessHours;
 
-// Function to ensure that the time for 12pm is displayed as 12pm and not 12am
-    var displayHour = businessHours >= 12 ? (businessHours === 12 ? '12 PM' : (businessHours - 12) + ' PM') : businessHours + ' AM';
+      // Function to ensure that the time for 12pm is displayed as 12pm and not 12am
+      var displayHour = businessHours >= 12 ? (businessHours === 12 ? '12 PM' : (businessHours - 12) + ' PM') : businessHours + ' AM';
 
-    container.append(`
+      container.append(`
       <div id="${hourId}" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">${displayHour}</div>
         <textarea class="col-8 col-md-10 description" rows="3"></textarea>
@@ -47,9 +47,9 @@ function generateTimeBlocks() {
       </div>
     `);
 
-    businessHours++;
+      businessHours++;
+    }
   }
-}
 
   // To generate time blocks
   generateTimeBlocks();
