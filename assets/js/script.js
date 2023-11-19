@@ -11,13 +11,6 @@ $(function () {
     $('#currentDay').text(dayjs().format('dddd, MMMM D'));
   }
 
-  // To display the current date & generate time blocks
-  displayCurrentDate();
-  generateTimeBlocks();
-
-  // To update the displayed date every minute
-  setInterval(displayCurrentDate, 60000);
-
   // To update time block colors based on current time
   function updateTimeBlocks() {
     var currentHour = dayjs().hour();
@@ -38,8 +31,6 @@ $(function () {
   }
 });
 
-// To set time block colors on page load
-updateTimeBlocks();
 
 // Function to generate time blocks from 9am-5pm
 function generateTimeBlocks() {
@@ -63,6 +54,12 @@ function generateTimeBlocks() {
   }
 }
 
+// To generate time blocks
+generateTimeBlocks();
+
+// To set time block colors on page load
+updateTimeBlocks();
+
 // To save user input to local storage
 $('.description').each(function () {
   var blockId = $(this).parent().attr('id');
@@ -79,4 +76,3 @@ $('.saveBtn').on('click', function () {
 
 // Set interval to check if the current time needs to be updated
 setInterval(updateTimeBlocks, 60000);
-
