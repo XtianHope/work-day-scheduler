@@ -33,7 +33,7 @@ $(function () {
     var container = $('.container-lg');
     var businessHours = 9;
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 9; i++) {
       var hourId = 'hour-' + businessHours;
 
       container.append(`
