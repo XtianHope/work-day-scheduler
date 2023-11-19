@@ -25,3 +25,11 @@ $(function () {
     });
   }
 });
+
+updateTimeBlocks();
+
+// To save user input to local storage
+$('.description').each(function () {
+  var blockId = $(this).parent().attr('id');
+  $(this).val(localStorage.getItem(blockId));
+});
