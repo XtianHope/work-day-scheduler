@@ -8,8 +8,8 @@ $(function () {
 
   // To update time block colors based on current time
   function updateTimeBlocks() {
-    // var currentHour = dayjs().hour();
-    var currentHour = 12;
+    var currentHour = dayjs().hour();
+    // var currentHour = 13;
 
     $('.time-block').each(function () {
       const blockHour = parseInt($(this).attr('id').split('-')[1]);
@@ -26,27 +26,30 @@ $(function () {
     });
   }
 
-  // Function to generate time blocks from 9am-5pm
-  function generateTimeBlocks() {
-    var container = $('.container-lg');
-    var businessHours = 9;
+// Function to generate time blocks from 9am-5pm
+function generateTimeBlocks() {
+  var container = $('.container-lg');
+  var businessHours = 9;
 
-    for (var i = 0; i < 9; i++) {
-      var hourId = 'hour-' + businessHours;
+  for (var i = 0; i < 9; i++) {
+    var hourId = 'hour-' + businessHours;
 
-      container.append(`
-        <div id="${hourId}" class="row time-block">
-          <div class="col-2 col-md-1 hour text-center py-3">${businessHours > 12 ? businessHours - 12 + 'PM' : businessHours + 'AM'}</div>
-          <textarea class="col-8 col-md-10 description" rows="3"></textarea>
-          <button class="btn saveBtn col-2 col-md-1" aria-label="save">
-            <i class="fas fa-save" aria-hidden="true"></i>
-          </button>
-        </div>
-      `);
+// Function to ensure that the time for 12pm is displayed as 12pm and not 12am
+    var displayHour = businessHours >= 12 ? (businessHours === 12 ? '12 PM' : (businessHours - 12) + ' PM') : businessHours + ' AM';
 
-      businessHours++;
-    }
+    container.append(`
+      <div id="${hourId}" class="row time-block">
+        <div class="col-2 col-md-1 hour text-center py-3">${displayHour}</div>
+        <textarea class="col-8 col-md-10 description" rows="3"></textarea>
+        <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+          <i class="fas fa-save" aria-hidden="true"></i>
+        </button>
+      </div>
+    `);
+
+    businessHours++;
   }
+}
 
   // To generate time blocks
   generateTimeBlocks();
