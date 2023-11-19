@@ -6,6 +6,12 @@ $(function () {
   // To display the current date at the top of the page
   $('#currentDay').text(dayjs().format('dddd, MMMM D'));
 
+  // To display the current date
+  displayCurrentDate();
+
+  // To update the displayed date every minute
+  setInterval(displayCurrentDate, 60000);
+
   // To update time block colors based on current time
   function updateTimeBlocks() {
     var currentHour = dayjs().hour();
