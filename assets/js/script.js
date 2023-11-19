@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   // To display the current date at the top of the page
   $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
@@ -11,7 +8,8 @@ $(function () {
 
   // To update time block colors based on current time
   function updateTimeBlocks() {
-    var currentHour = dayjs().hour();
+    // var currentHour = dayjs().hour();
+    var currentHour = 12;
 
     $('.time-block').each(function () {
       const blockHour = parseInt($(this).attr('id').split('-')[1]);
