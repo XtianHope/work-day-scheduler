@@ -33,3 +33,11 @@ $('.description').each(function () {
   var blockId = $(this).parent().attr('id');
   $(this).val(localStorage.getItem(blockId));
 });
+
+// Event listener for the save button
+$('.saveBtn').on('click', function () {
+  var blockId = $(this).parent().attr('id');
+  var blockText = $(this).siblings('.description').val();
+
+  localStorage.setItem(blockId, blockText);
+});
