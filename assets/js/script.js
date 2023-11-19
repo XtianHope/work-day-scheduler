@@ -26,6 +26,7 @@ $(function () {
   }
 });
 
+// To set time block colors on page load
 updateTimeBlocks();
 
 // To save user input to local storage
@@ -41,3 +42,7 @@ $('.saveBtn').on('click', function () {
 
   localStorage.setItem(blockId, blockText);
 });
+
+// Set interval to check if the current time needs to be updated
+setInterval(updateTimeBlocks, 60000);
+
