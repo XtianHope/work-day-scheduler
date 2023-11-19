@@ -3,10 +3,10 @@
 // in the html.
 $(function () {
   // To display the current date at the top of the page
-  $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+  $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 
   function displayCurrentDate() {
-    $('#currentDay').text(dayjs().format('dddd, MMMM D'));
+    $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
   }
 
   // To update time block colors based on current time
