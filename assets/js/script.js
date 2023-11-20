@@ -8,8 +8,8 @@ $(function () {
 
   // To update time block colors based on current time
   function updateTimeBlocks() {
-     var currentHour = dayjs().hour();
-    // var currentHour = 13;
+    var currentHour = dayjs().hour();
+    //  var currentHour = 13;
 
     $('.time-block').each(function () {
       const blockHour = parseInt($(this).attr('id').split('-')[1]);
